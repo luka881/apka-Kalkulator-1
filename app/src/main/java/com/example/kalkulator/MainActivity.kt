@@ -8,6 +8,9 @@ import android.widget.EditText
 class MainActivity : AppCompatActivity() {
     private lateinit var editTextResult: EditText
     private lateinit var buttonAdd: Button
+    private lateinit var buttonSubtract: Button
+    private lateinit var buttonMultiply: Button
+    private lateinit var buttonDivide: Button
     private lateinit var buttonEquals: Button
     private lateinit var buttonClear: Button
 
@@ -21,10 +24,16 @@ class MainActivity : AppCompatActivity() {
 
         editTextResult = findViewById(R.id.editTextResult)
         buttonAdd = findViewById(R.id.buttonAdd)
+        buttonSubtract = findViewById(R.id.buttonSubtract)
+        buttonMultiply = findViewById(R.id.buttonMultiply)
+        buttonDivide = findViewById(R.id.buttonDivide)
         buttonEquals = findViewById(R.id.buttonEquals)
         buttonClear = findViewById(R.id.buttonClear)
 
         buttonAdd.setOnClickListener { handleOperation("+") }
+        buttonSubtract.setOnClickListener { handleOperation("-") }
+        buttonMultiply.setOnClickListener { handleOperation("*") }
+        buttonDivide.setOnClickListener { handleOperation("/") }
         buttonEquals.setOnClickListener { handleEquals() }
         buttonClear.setOnClickListener { clear() }
     }
